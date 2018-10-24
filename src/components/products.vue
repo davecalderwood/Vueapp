@@ -25,7 +25,7 @@ export default {
       ...mapActions(['addItem']),
     Clicked (e) {
         e.preventDefault();
-        const myURL = `https://storeapiexpress-wanjjmcwip.now.sh/products/${this.valfriend}`
+        const myURL = `https://storeapiexpress-fpckhcjnky.now.sh/products/${this.valfriend}`
         fetch(myURL) 
             .then(res => {return res.json()})
             .then ( res => {
@@ -35,7 +35,7 @@ export default {
     },
   },
   mounted () {
-    const myURL = `https://storeapiexpress-wanjjmcwip.now.sh/products `
+    const myURL = `https://storeapiexpress-fpckhcjnky.now.sh/products `
     fetch(myURL) 
         .then(res => {return res.json()})
         .then ( res => {

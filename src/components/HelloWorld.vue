@@ -1,7 +1,6 @@
 
 <template class ="blueboi">
   <div class="hello, blueboi">
-    <h2>{{ msg }}</h2>
   </div>
 </template>
 
@@ -20,10 +19,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .blueboi{
-    background-color: rgba(46.7%, 80%, 98.8%, 0.7); 
+    background-image: url("https://i.imgur.com/4QaiZXd.png");
+    background-repeat:no-repeat;
+    background-size: cover;
     border-style: none;
     margin: 5em  10em;
-    height: 30em;
+    height: 31.5em;
 }
 h1, h2, div {
   text-shadow: .07em .07em #bdbdbd;

@@ -6,17 +6,22 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cart: [],
-    isLoggedIn: false
+    orders: [],
+    isLoggedIn: false,
   },
     getters: {
     },
   mutations: {
       ADD_ITEM: (state, items) => {
+          items.CheckoutTime = new Date();
           state.cart.push(items)
           console.log(state.cart)
       },
-      REMOVE_ALL: (state) => {
-          state.cart=[]
+      REMOVE_ALL: async (state) => {
+       await state.orders.push(state.cart)
+       state.orders = state.orders.flat()
+       console.log(state.cart[0])
+           state.cart=[]
       }
   },
   actions: {

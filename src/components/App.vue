@@ -5,6 +5,7 @@
       <md-button component={router-link} to="/register" class="none">Register</md-button>
       <md-button component={router-link} to="/login" class="none">Log in</md-button>
       <md-button component={router-link} to="/products" class="none" >Products</md-button>
+      <md-button component={router-link} to="/orders" class="none" >Past Orders</md-button>
       <md-button component={router-link} to="/cart" class="none"><md-icon>shopping_cart</md-icon></md-button>
     </md-toolbar>
     <div class="blueboi">
@@ -19,6 +20,18 @@
     </div>
   </div>
 </template>
+<script>
+import {mapState} from 'vuex'
+import store from '../store'
+
+export default {
+  name: 'App',
+  computed: {
+    ...mapState(['isLoggedIn'])
+  },
+}
+</script>
+
 
 <style lang="scss" >
   .md-toolbar + .md-toolbar {
@@ -37,21 +50,4 @@
   .space{
 padding-top: 10px;
   }
-</style>
-<script>
-export default {
-  name: 'App',
-}
-</script>
-
-<style>
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

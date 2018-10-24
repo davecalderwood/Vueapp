@@ -11,11 +11,16 @@ import login from '@/components/Login'
 import register from '@/components/register'
 import products from '@/components/products'
 import cart from '@/components/cart'
+import orders from '@/components/orders'
+import {mapState} from 'vuex'
 Vue.use(VueMaterial)
 Vue.use(Router)
 Vue.use(MdToolbar)
 
 export default new Router({
+  computed: {
+    ...mapState(['isLoggedIn'])
+  },
   routes: [
     {
       path: '/',
@@ -39,12 +44,14 @@ export default new Router({
   {
     path:'/login',
     name: 'login',
-    component:login
+    component:login,
+    meta: {isLoggedIn: true}
   },
   {
     path: '/register',
     name:'register',
-    component: register
+    component: register,
+    meta: {isLoggedIn: true}
   },
   {
     path: '/products',
@@ -55,6 +62,11 @@ export default new Router({
     path:'/cart',
     name: 'cart',
     component: cart
-  }
+  },
+{
+  path:'/orders',
+  name: 'orders',
+  component: orders
+}
   ]
 })

@@ -33,8 +33,12 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   name: "App",
+  computed: {
+    ...mapState(['isLoggedIn'])
+  },
   data() {
     return {
       loading: false,
@@ -54,7 +58,7 @@ export default {
       }, 5000);
     },
     onSubmit () {
-          const myURL = `https://storeapiexpress-wanjjmcwip.now.sh/users/login`
+          const myURL = `https://storeapiexpress-fpckhcjnky.now.sh/users/login`
           const reqContent = {
             method: "POST",
             headers: {"Content-Type": "application/json; charset=utf-8"},
@@ -65,6 +69,7 @@ export default {
               .then(res => {return res.json()})
               .then ( res => {
                res})
+               .then (userIsLoggedIn = IsLoggedIn)
               .catch ()
 
     }
