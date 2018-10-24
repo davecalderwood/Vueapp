@@ -12,7 +12,7 @@
         <input class="form-field" v-model="password" name="password" id="password" placeholder="Password" required /><br/>
 
         <input class="form-field" v-model="email" name="email" id="email" type="email" placeholder="Email Address" required /><span class="fa fa-envelope"></span><br/>
-        <button @click="clickHandler">Register</button>
+        <button class="button-submit" @click="clickHandler">Register</button>
       </form>
       {{this.response.msg}}
     </div>
@@ -75,13 +75,16 @@ export default {
 </script>
 
 <style lang="scss">
+.contact {
+  width: 100px;
+}
 .centered-container {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   height: 100vh;
-  .tite {
+  .title {
     text-allign: center;
     margin-bottom: 30px;
     img {
@@ -126,5 +129,34 @@ export default {
     align-items: center;
     justify-content: center;
   }
+}
+.button-submit {
+  font-size: 125%;
+  /* border: 2px solid black; */
+	background: #4593b9;
+	color: #f2f2f2;
+	padding: -10px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+  transition: all 500ms ease; 
+  transform-style: preserve-3d;
+}
+.button-submit:after {
+	top: 100%;
+	left: 0px;
+	width: 100%;
+	position: absolute;
+  background: #3a9999;
+  /* border: 2px solid black; */
+	border-radius: 5px;
+	content: 'Registus';
+  // Incipias
+	transform-origin: left bottom;
+	transform: rotateX(90deg);
+} 
+.button-submit:hover {
+  transform-origin: center bottom;
+	transform: rotateX(-90deg) translateY(100%);
 }
 </style>
